@@ -1,2 +1,0 @@
-# CRUD
-Django CRUD Operations

@@ -10,3 +10,13 @@ class ProductsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Products
         fields = ['product_id', 'product_name', 'category','category_name', 'price', 'stock']
+
+    def validate_price(self,price):
+        if price<0:
+            raise serializers.ValidationError("Price must be greater than zero.")
+        return price
+    
+    def validate_stock(self,stock):
+        if stock<0:
+            raise serializers.ValidationError("Stock must be greater than zero.")
+        return stock
