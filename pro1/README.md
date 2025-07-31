@@ -1,13 +1,11 @@
-# CRUD Operation Application
-----------------------------
 
 This is a simple CRU (Create, Read, Update) application built using [Python,Django,DRF].
 
 # Features
 
-- Create new records
-- View list of records
-- Update existing records
+- Create new Products
+- View list of Products
+- Update existing Products
 
 # Setup instructions
 1. Go to the Below URL
@@ -16,26 +14,39 @@ This is a simple CRU (Create, Read, Update) application built using [Python,Djan
 2. Download the zip file and extract it.
 
 3. Open terminal and create virtual Environment.
-    -> python -m venv env_name
-    -> cd env_name
-    -> cd scripts
-    -> activate
+
+    i. python -m venv env_name
+
+    ii.  cd env_name
+
+    iii. cd scripts
+
+    iv activate
 
 4. After activating the environment goto project directory(pro1).
 5. Install the requirements.
+
    pip install django djangorestframework numpy pandas openpyxl
 
 6. run the following commands
+
     python manage.py makemigrations
+
     python manage.py migrate
+
     python manage.py createsuperuser
+
         username: Enter your username
+
         email: Enter your email
+        
         password: Enter your password
+
         confirm password: Enter confirm password
 
 # Run Guidence
 1. To run the project
+
     python manage.py runserver
 
 2. Copy URL http://127.0.0.1:8000/
@@ -61,9 +72,14 @@ This is a simple CRU (Create, Read, Update) application built using [Python,Djan
 
         here all the urls open in the postman
         =====================================
-        
+        1. Open the postman
+        2. Paste that cooresponding URL 
+        3. Select that corresponding method(GET,POST,PUT,DELETE,PATCH)
+        4. Enter the key name and correspoding value.
+
         http://127.0.0.1:8000/api/add_category/
         -> Add the category.(POST method)
+        
 
         http://127.0.0.1:8000/api/list_categories/
         -> we can see the list of Categories.(GET method)
