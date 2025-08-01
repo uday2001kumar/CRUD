@@ -94,10 +94,19 @@ This is a simple CRU (Create, Read, Update) application built using [Python,Djan
         -> We can update the product details.(PUT method)
 
         http://127.0.0.1:8000/api/upload_file/
+
         -> We can upload the excel file.(POST method)
 
-        
+SQL Schema:
+==========
+* In django SQL Schema is avialable in inside application folder(webapp1) and then migrations folder.
+* After that 0001_initial.py file.
 
+EXCEL FILE
+==========
+* I put the Excel file inside pro1 folder(sample.xlsx)
+* It contains 10 records.
+* The fields are product_name,category_id,price,stock.
 
 
 
