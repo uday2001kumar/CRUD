@@ -31,8 +31,6 @@ def add_product(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        
-        print(serializer.errors)  # Debugging line to check errors
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     return Response({"detail": "Method not allowed"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
@@ -75,15 +73,12 @@ def upload_products(request):
 
         for index, row in df.iterrows():
             category_id = row['category_id']
-
-            # ✅ Check if category exists
             if not Category.objects.filter(category_id=category_id).exists():
                 return Response(
                     {"error": f"Row {index + 2}: Category ID {category_id} does not exist."},
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
-            # Prepare data
             data = {
                 'product_name': row['product_name'],
                 'category': category_id,
